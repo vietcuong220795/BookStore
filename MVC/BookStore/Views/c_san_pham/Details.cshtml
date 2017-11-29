@@ -1,0 +1,135 @@
+﻿@model BookStore.Models.san_pham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Mytemplate.cshtml";
+}
+
+
+
+<div style="margin-left:20%">
+    <h2>Chi tiết sản phẩm: @Html.DisplayFor(model => model.ten_san_pham)</h2>
+    <dl class="dl-horizontal">
+        <dt>
+          Mã sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ma_san_pham)
+        </dd>
+
+        <dt>
+            Tên sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ten_san_pham)
+        </dd>
+
+        <dt>
+            Mã loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ma_loai)
+        </dd>
+
+        <dt>
+            Mô tả chi tiết:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mo_ta_chi_tiet)
+        </dd>
+
+        <dt>
+            Đơn giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.don_gia)
+        </dd>
+
+        <dt>
+            Đơn vị tính:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dvt)
+        </dd>
+
+        <dt>
+            Tình trạng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tinh_trang)
+        </dd>
+
+        <dt>
+            Hình:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/")/@Html.DisplayFor(model => model.hinh)" style="height:80px;width:80px" />
+           
+        </dd>
+
+        <dt>
+            Sản phẩm mới:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.san_pham_moi)
+        </dd>
+
+        <dt>
+           Tác giả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tac_gia)
+        </dd>
+
+        <dt>
+          Nhà xuất bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nxb)
+        </dd>
+
+        <dt>
+           Ngày xuất bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngay_xuat_ban)
+        </dd>
+
+        <dt>
+            Số trang:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.so_trang)
+        </dd>
+
+    </dl>
+    <div id="hang1" style="float:left;width:100%;margin-left:2%;margin-right:2%">
+        <div id="sp1" style="margin-right:2%;margin-bottom:2%;float:left">
+            <div>
+                Số lượng:<input type="text" id="txtSL"> @*<asp:TextBox ID="TextBox1" runat="server" Width="44px"></asp:TextBox>*@
+                <button name="btndathang" onclick="">
+                    <img src="@Url.Content("~/images/bag.png")" />
+                </button> @*<asp:ImageButton ID="btndathang" runat="server" ImageUrl="~/images/bag.png" />*@
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Trở về", "Index")
+</p>

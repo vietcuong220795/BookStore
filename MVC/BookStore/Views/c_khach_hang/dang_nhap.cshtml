@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BookStore.Models.khach_hang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Mytemplate.cshtml";
+    }
+              <div style="margin-left:8%;margin-bottom:15%">
+    <legend style="color:#900;">Đăng nhập</legend>
+ 
+
+    @using (Html.BeginForm("dang_nhap", "c_khach_hang", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+             
+            @Html.ValidationSummary(true)
+
+            <div class="form-group" style="margin-left:7%">
+                <p>UserName: @Html.TextBox("username")</p>
+
+                <div class="col-md-10">
+                    <p>Password @Html.TextBox("pass")</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Login" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

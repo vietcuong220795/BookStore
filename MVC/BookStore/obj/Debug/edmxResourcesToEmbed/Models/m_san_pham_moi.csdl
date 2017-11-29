@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BESTBOOKVNModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="v_san_pham_moi">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BESTBOOKVNEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="v_san_pham_moi" EntityType="Self.v_san_pham_moi" />
+  </EntityContainer>
+</Schema>

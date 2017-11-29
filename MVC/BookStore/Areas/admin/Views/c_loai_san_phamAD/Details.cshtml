@@ -1,0 +1,43 @@
+﻿@model BookStore.Models.loai_san_pham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/MytemplateAD.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>loai_san_pham</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ten_loai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ten_loai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mo_ta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mo_ta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hinh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ma_loai }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

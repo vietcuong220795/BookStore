@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BESTBOOKVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.v_san_pham_moi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_san_pham_moi">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BESTBOOKVNModel1StoreContainer">
+    <EntitySet Name="v_san_pham_moi" EntityType="Self.v_san_pham_moi" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_san_pham_moi].[id_san_pham] AS [id_san_pham], 
+    [v_san_pham_moi].[ma_san_pham] AS [ma_san_pham], 
+    [v_san_pham_moi].[ten_san_pham] AS [ten_san_pham], 
+    [v_san_pham_moi].[ma_loai] AS [ma_loai], 
+    [v_san_pham_moi].[mo_ta_chi_tiet] AS [mo_ta_chi_tiet], 
+    [v_san_pham_moi].[don_gia] AS [don_gia], 
+    [v_san_pham_moi].[dvt] AS [dvt], 
+    [v_san_pham_moi].[tinh_trang] AS [tinh_trang], 
+    [v_san_pham_moi].[hinh] AS [hinh], 
+    [v_san_pham_moi].[san_pham_moi] AS [san_pham_moi], 
+    [v_san_pham_moi].[tac_gia] AS [tac_gia], 
+    [v_san_pham_moi].[nxb] AS [nxb], 
+    [v_san_pham_moi].[ngay_xuat_ban] AS [ngay_xuat_ban], 
+    [v_san_pham_moi].[so_trang] AS [so_trang], 
+    [v_san_pham_moi].[danh_muc] AS [danh_muc]
+    FROM [dbo].[v_san_pham_moi] AS [v_san_pham_moi]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="indexAD.master.cs" Inherits="indexAD" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>BestBookVN</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery.min.js"></script>
+<!-- for bootstrap working -->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'/>
+
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
+
+<!-- animation-effect -->
+<link href="css/animate.min.css" rel="stylesheet"/> 
+<script src="js/wow.min.js"></script>
+
+<!-- //animation-effect -->
+<link href="css/css.css" rel="stylesheet" />
+</head>
+<body style="height:100%">   
+    <form style="width:100%;height:100%;" runat="server">
+    <div id="header" style="background-color:#68A4C4;padding:30px">
+        <div style="float:left">
+            <label style="color:yellow">BEST </label>
+            <label style="color:white">BOOK VN</label>
+        </div>
+        
+        <div style="margin-right:5px"> 
+            <a style="color:#68A4C4;float:right"> <asp:Button ID="btnLogout" runat="server" Text="Đăng xuất" OnClick="btnLogout_Click" /></a>       
+            <%--<a href="dathang.aspx" style="color:white;float:right"><div id="giohang">Giỏ hàng|</div></a>
+            <div style="float:right"><asp:Image ID="imggiohang"  ImageUrl="~/images/bag.png" runat="server" /></div>
+            <a href="dangki.aspx" style="color:white;float:right"><div id="dangki"> |Đăng kí|</div></a>         --%>
+            <a href="dangnhap.aspx" style="color:white;float:right" ><div id="dangnhap">Đăng nhập </div></a>            
+        </div>
+    </div>
+    <div id="menu" style="height:100%">
+    <div id="chitietmenu" style="float:left;margin-left:18%;width:100%;height:100%">            
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="sanphamAD.aspx" class="act">SẢN PHẨM</a></li>	                         
+                           <%-- <li class="active"><a href="trangchu" class="act">LOẠI SẢN PHẨM</a></li>	--%>
+                            <li class="active"><a href="khachhang.aspx" class="act">KHÁCH HÀNG</a></li>	
+                          <%--  <li class="active"><a href="lienhe" class="act">HOÁ ĐƠN</a></li>	--%>
+                             <li class="active"><a class="act"><p>
+                               <asp:TextBox ID="txtSearch" runat="server" TextMode="Search"></asp:TextBox>
+                               <asp:Button ID="btnTim" runat="server" Text="Tìm kiếm"  /></p>
+                               </a></li>	
+                        </ul>
+                </div>
+    </div>  
+     
+    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ctpduongdan" runat="server"></asp:ContentPlaceHolder>
+
+        </div>
+    <div>
+        <asp:ContentPlaceHolder id="ctpMain" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <div class="clearfix"></div>	  	
+        <div id="footer" style="background-color:#68A4C4;float:left;width:100%;height:100%">
+        <div id="map" style="float:left;width:24.5%;margin-left:0.5%;margin-top:2px"><p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.7752544716514!2d106.66481601294817!3d10.751796892338238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ef99952cd31%3A0x73679b1efa95d84e!2zMjgtMzAgTmfDtCBRdXnhu4FuLCBwaMaw4budbmcgNiwgUXXhuq1uIDUsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1478359718927" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+
+        </div>
+        
+        <div id="thongtinlienhe" style="float:left;width:25%;"><p>Liên hệ chúng tôi</p>
+
+        <a style="color:white"><p> 28 - 30 Ngô Quyền - Phường 6 - Quận 5 - Tp Hồ Chí Minh</p></a>
+        <a style="color:white"><p>Điện thoại: 08.39508812</p></a>
+        <a style="color:white"><p>Email: it@hbu.edu.vn</p></a>
+        </div>
+        
+        <div id="tag" style="float:left;width:25%;"><p>Trang</p>
+
+        <a style="color:white"><p>Danh sách tác giả</p></a>
+        <a style="color:white"><p>Thông tin giao hàng</p></a>
+        <a style="color:white"><p>Liên hệ</p></a>
+
+        </div>
+
+        <div id="tintuc" style="float:left;width:25%;"> <p>Tin tức mới nhất</p>
+            <a style="color:white"><p>Tin 1</p></a>
+            <a style="color:white"><p>Tin 2</p></a>
+            <a style="color:white"><p>Tin 3</p></a>
+
+        </div>   
+            
+    </div>
+    </form>
+</body>
+</html>

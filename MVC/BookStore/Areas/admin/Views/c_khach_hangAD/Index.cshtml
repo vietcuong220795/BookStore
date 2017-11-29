@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BookStore.Models.khach_hang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/MytemplateAD.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ten_khach_hang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dia_chi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dien_thoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ghi_chu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mat_khau)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ten_khach_hang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dia_chi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dien_thoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ghi_chu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mat_khau)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ma_khach_hang }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ma_khach_hang }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ma_khach_hang })
+        </td>
+    </tr>
+}
+
+</table>

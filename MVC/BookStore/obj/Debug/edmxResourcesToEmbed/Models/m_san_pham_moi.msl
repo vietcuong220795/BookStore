@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BESTBOOKVNModel1StoreContainer" CdmEntityContainer="BESTBOOKVNEntities2">
+    <EntitySetMapping Name="v_san_pham_moi">
+      <EntityTypeMapping TypeName="BESTBOOKVNModel1.v_san_pham_moi">
+        <MappingFragment StoreEntitySet="v_san_pham_moi">
+          <ScalarProperty Name="id_san_pham" ColumnName="id_san_pham" />
+          <ScalarProperty Name="ma_san_pham" ColumnName="ma_san_pham" />
+          <ScalarProperty Name="ten_san_pham" ColumnName="ten_san_pham" />
+          <ScalarProperty Name="ma_loai" ColumnName="ma_loai" />
+          <ScalarProperty Name="mo_ta_chi_tiet" ColumnName="mo_ta_chi_tiet" />
+          <ScalarProperty Name="don_gia" ColumnName="don_gia" />
+          <ScalarProperty Name="dvt" ColumnName="dvt" />
+          <ScalarProperty Name="tinh_trang" ColumnName="tinh_trang" />
+          <ScalarProperty Name="hinh" ColumnName="hinh" />
+          <ScalarProperty Name="san_pham_moi" ColumnName="san_pham_moi" />
+          <ScalarProperty Name="tac_gia" ColumnName="tac_gia" />
+          <ScalarProperty Name="nxb" ColumnName="nxb" />
+          <ScalarProperty Name="ngay_xuat_ban" ColumnName="ngay_xuat_ban" />
+          <ScalarProperty Name="so_trang" ColumnName="so_trang" />
+          <ScalarProperty Name="danh_muc" ColumnName="danh_muc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

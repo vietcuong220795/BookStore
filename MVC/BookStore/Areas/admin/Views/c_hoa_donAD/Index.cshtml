@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BookStore.Models.hoa_don>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/MytemplateAD.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ma_khach_hang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngay_dat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tong_tien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ghi_chu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tinh_trang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ma_khach_hang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngay_dat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tong_tien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ghi_chu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tinh_trang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ma_hoa_don }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ma_hoa_don }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ma_hoa_don })
+        </td>
+    </tr>
+}
+
+</table>

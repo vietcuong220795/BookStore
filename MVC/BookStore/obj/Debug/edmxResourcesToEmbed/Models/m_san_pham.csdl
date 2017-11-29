@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BESTBOOKVNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="khach_hang">
+    <Key>
+      <PropertyRef Name="ma_khach_hang" />
+    </Key>
+    <Property Name="ma_khach_hang" Type="Int32" Nullable="false" />
+    <Property Name="ten_khach_hang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phai" Type="Byte" />
+    <Property Name="dia_chi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dien_thoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ghi_chu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mat_khau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="loai_san_pham">
+    <Key>
+      <PropertyRef Name="ma_loai" />
+    </Key>
+    <Property Name="ma_loai" Type="Int32" Nullable="false" />
+    <Property Name="ten_loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mo_ta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="san_pham">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="hoa_don">
+    <Key>
+      <PropertyRef Name="ma_hoa_don" />
+      <PropertyRef Name="ma_khach_hang" />
+    </Key>
+    <Property Name="ma_hoa_don" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_san_pham" Type="Int32" />
+    <Property Name="ma_khach_hang" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ngay_dat" Type="DateTime" Precision="0" />
+    <Property Name="tong_tien" Type="Double" />
+    <Property Name="ghi_chu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_manga_comic">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_san_pham_moi">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_tieng_anh">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_tieu_thuyet">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="Int32" Nullable="false" />
+    <Property Name="ma_san_pham" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ten_san_pham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loai" Type="Int32" />
+    <Property Name="mo_ta_chi_tiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="don_gia" Type="Int32" />
+    <Property Name="dvt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tinh_trang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hinh" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="san_pham_moi" Type="Byte" />
+    <Property Name="tac_gia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nxb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_xuat_ban" Type="DateTime" Precision="3" />
+    <Property Name="so_trang" Type="Int32" />
+    <Property Name="danh_muc" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BESTBOOKVNEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="khach_hang" EntityType="Self.khach_hang" />
+    <EntitySet Name="loai_san_pham" EntityType="Self.loai_san_pham" />
+    <EntitySet Name="san_pham" EntityType="Self.san_pham" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="hoa_don" EntityType="Self.hoa_don" />
+    <EntitySet Name="v_manga_comic" EntityType="Self.v_manga_comic" />
+    <EntitySet Name="v_san_pham_moi" EntityType="Self.v_san_pham_moi" />
+    <EntitySet Name="v_tieng_anh" EntityType="Self.v_tieng_anh" />
+    <EntitySet Name="v_tieu_thuyet" EntityType="Self.v_tieu_thuyet" />
+    <FunctionImport Name="sp_dang_nhap" ReturnType="Collection(BESTBOOKVNModel.sp_dang_nhap_Result)">
+      <Parameter Name="usr" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_dang_nhap_Result">
+    <Property Type="Int32" Name="ma_khach_hang" Nullable="false" />
+    <Property Type="String" Name="ten_khach_hang" Nullable="true" MaxLength="100" />
+    <Property Type="Byte" Name="phai" Nullable="true" />
+    <Property Type="String" Name="dia_chi" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="dien_thoai" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ghi_chu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="mat_khau" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

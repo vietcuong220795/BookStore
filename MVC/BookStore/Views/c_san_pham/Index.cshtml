@@ -1,0 +1,86 @@
+﻿@*@model IEnumerable<BookStore.Models.san_pham>*@
+@model PagedList.IPagedList<BookStore.Models.v_san_pham_moi>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Mytemplate.cshtml";
+}
+<h1>@ViewBag.Mess</h1>
+<div id="duongdan" style="width:100%;height:50px;float:left;background-color:#68A4C4">
+    <div style="margin-left:15%;margin-top:8px"><img ID="Image13" src="~/images/home.png" /></div>
+</div>
+
+<div id="hang1" style="float:left;width:100%;margin-left:2%;margin-right:2%">
+
+    
+@foreach (var item in Model)
+{
+    if(item.san_pham_moi==1)
+    {
+        <div id="sp1" style="margin-right:2%;margin-bottom:2%;float:left">
+            <a href="@Url.Action("Details/"+ @Html.DisplayFor(modelItem => item.id_san_pham), "c_san_pham")"><img src="@Url.Content("~/images/")/@Html.DisplayFor(modelItem => item.hinh)" /></a>
+        <p>Đơn giá: @Html.DisplayFor(modelItem => item.don_gia)</p>
+        <div>
+            Số lượng:<input type="text" id="txtSL"> @*<asp:TextBox ID="TextBox1" runat="server" Width="44px"></asp:TextBox>*@
+            <button name="btndathang" onclick="">
+                <img src="@Url.Content("~/images/bag.png")" />
+            </button> @*<asp:ImageButton ID="btndathang" runat="server" ImageUrl="~/images/bag.png" />*@
+        </div>
+    </div> 
+    }  
+}
+ </div>
+    @*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_san_pham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ten_san_pham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_loai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mo_ta_chi_tiet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.don_gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dvt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tinh_trang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.san_pham_moi)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_san_pham }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_san_pham }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_san_pham })
+        </td>
+    </tr>
+}
+
+    </table>*@
+<div >
+    @*Trang @(Model.PageCount<Model.PageNumber? 0 : Model.PageNumber)/@Model.PageCount;*@
+
+</div>
+<div style="float:right;margin-right:5px">
+    <span>
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))
+    </span>
+</div>

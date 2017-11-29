@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BESTBOOKVNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.hoa_don' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="hoa_don">
+    <Key>
+      <PropertyRef Name="ma_hoa_don" />
+      <PropertyRef Name="ma_khach_hang" />
+    </Key>
+    <Property Name="ma_hoa_don" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_san_pham" Type="int" />
+    <Property Name="ma_khach_hang" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ngay_dat" Type="date" />
+    <Property Name="tong_tien" Type="float" />
+    <Property Name="ghi_chu" Type="nvarchar" MaxLength="50" />
+    <Property Name="tinh_trang" Type="int" />
+  </EntityType>
+  <EntityType Name="khach_hang">
+    <Key>
+      <PropertyRef Name="ma_khach_hang" />
+    </Key>
+    <Property Name="ma_khach_hang" Type="int" Nullable="false" />
+    <Property Name="ten_khach_hang" Type="nvarchar" MaxLength="100" />
+    <Property Name="phai" Type="tinyint" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="200" />
+    <Property Name="dien_thoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="ghi_chu" Type="nvarchar" MaxLength="50" />
+    <Property Name="mat_khau" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="loai_san_pham">
+    <Key>
+      <PropertyRef Name="ma_loai" />
+    </Key>
+    <Property Name="ma_loai" Type="int" Nullable="false" />
+    <Property Name="ten_loai" Type="nvarchar" MaxLength="50" />
+    <Property Name="mo_ta" Type="text" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="san_pham">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.v_manga_comic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_manga_comic">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.v_san_pham_moi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_san_pham_moi">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BESTBOOKVN.dbo.v_tai_khoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="v_tai_khoan">
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="mat_khau" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.v_tieng_anh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_tieng_anh">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BESTBOOKVN.dbo.v_tieu_thuyet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_tieu_thuyet">
+    <Key>
+      <PropertyRef Name="id_san_pham" />
+    </Key>
+    <Property Name="id_san_pham" Type="int" Nullable="false" />
+    <Property Name="ma_san_pham" Type="nvarchar" MaxLength="50" />
+    <Property Name="ten_san_pham" Type="nvarchar" MaxLength="100" />
+    <Property Name="ma_loai" Type="int" />
+    <Property Name="mo_ta_chi_tiet" Type="text" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="20" />
+    <Property Name="tinh_trang" Type="nvarchar" MaxLength="100" />
+    <Property Name="hinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="san_pham_moi" Type="tinyint" />
+    <Property Name="tac_gia" Type="nvarchar" MaxLength="100" />
+    <Property Name="nxb" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngay_xuat_ban" Type="datetime" />
+    <Property Name="so_trang" Type="int" />
+    <Property Name="danh_muc" Type="int" />
+  </EntityType>
+  <Function Name="sp_dang_nhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usr" Type="nvarchar" Mode="In" />
+    <Parameter Name="pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="BESTBOOKVNModelStoreContainer">
+    <EntitySet Name="khach_hang" EntityType="Self.khach_hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loai_san_pham" EntityType="Self.loai_san_pham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="san_pham" EntityType="Self.san_pham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hoa_don" EntityType="Self.hoa_don" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [hoa_don].[ma_hoa_don] AS [ma_hoa_don], 
+    [hoa_don].[id_san_pham] AS [id_san_pham], 
+    [hoa_don].[ma_khach_hang] AS [ma_khach_hang], 
+    [hoa_don].[ngay_dat] AS [ngay_dat], 
+    [hoa_don].[tong_tien] AS [tong_tien], 
+    [hoa_don].[ghi_chu] AS [ghi_chu], 
+    [hoa_don].[tinh_trang] AS [tinh_trang]
+    FROM [dbo].[hoa_don] AS [hoa_don]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_manga_comic" EntityType="Self.v_manga_comic" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_manga_comic].[id_san_pham] AS [id_san_pham], 
+    [v_manga_comic].[ma_san_pham] AS [ma_san_pham], 
+    [v_manga_comic].[ten_san_pham] AS [ten_san_pham], 
+    [v_manga_comic].[ma_loai] AS [ma_loai], 
+    [v_manga_comic].[mo_ta_chi_tiet] AS [mo_ta_chi_tiet], 
+    [v_manga_comic].[don_gia] AS [don_gia], 
+    [v_manga_comic].[dvt] AS [dvt], 
+    [v_manga_comic].[tinh_trang] AS [tinh_trang], 
+    [v_manga_comic].[hinh] AS [hinh], 
+    [v_manga_comic].[san_pham_moi] AS [san_pham_moi], 
+    [v_manga_comic].[tac_gia] AS [tac_gia], 
+    [v_manga_comic].[nxb] AS [nxb], 
+    [v_manga_comic].[ngay_xuat_ban] AS [ngay_xuat_ban], 
+    [v_manga_comic].[so_trang] AS [so_trang], 
+    [v_manga_comic].[danh_muc] AS [danh_muc]
+    FROM [dbo].[v_manga_comic] AS [v_manga_comic]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_san_pham_moi" EntityType="Self.v_san_pham_moi" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_san_pham_moi].[id_san_pham] AS [id_san_pham], 
+    [v_san_pham_moi].[ma_san_pham] AS [ma_san_pham], 
+    [v_san_pham_moi].[ten_san_pham] AS [ten_san_pham], 
+    [v_san_pham_moi].[ma_loai] AS [ma_loai], 
+    [v_san_pham_moi].[mo_ta_chi_tiet] AS [mo_ta_chi_tiet], 
+    [v_san_pham_moi].[don_gia] AS [don_gia], 
+    [v_san_pham_moi].[dvt] AS [dvt], 
+    [v_san_pham_moi].[tinh_trang] AS [tinh_trang], 
+    [v_san_pham_moi].[hinh] AS [hinh], 
+    [v_san_pham_moi].[san_pham_moi] AS [san_pham_moi], 
+    [v_san_pham_moi].[tac_gia] AS [tac_gia], 
+    [v_san_pham_moi].[nxb] AS [nxb], 
+    [v_san_pham_moi].[ngay_xuat_ban] AS [ngay_xuat_ban], 
+    [v_san_pham_moi].[so_trang] AS [so_trang], 
+    [v_san_pham_moi].[danh_muc] AS [danh_muc]
+    FROM [dbo].[v_san_pham_moi] AS [v_san_pham_moi]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_tieng_anh" EntityType="Self.v_tieng_anh" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_tieng_anh].[id_san_pham] AS [id_san_pham], 
+    [v_tieng_anh].[ma_san_pham] AS [ma_san_pham], 
+    [v_tieng_anh].[ten_san_pham] AS [ten_san_pham], 
+    [v_tieng_anh].[ma_loai] AS [ma_loai], 
+    [v_tieng_anh].[mo_ta_chi_tiet] AS [mo_ta_chi_tiet], 
+    [v_tieng_anh].[don_gia] AS [don_gia], 
+    [v_tieng_anh].[dvt] AS [dvt], 
+    [v_tieng_anh].[tinh_trang] AS [tinh_trang], 
+    [v_tieng_anh].[hinh] AS [hinh], 
+    [v_tieng_anh].[san_pham_moi] AS [san_pham_moi], 
+    [v_tieng_anh].[tac_gia] AS [tac_gia], 
+    [v_tieng_anh].[nxb] AS [nxb], 
+    [v_tieng_anh].[ngay_xuat_ban] AS [ngay_xuat_ban], 
+    [v_tieng_anh].[so_trang] AS [so_trang], 
+    [v_tieng_anh].[danh_muc] AS [danh_muc]
+    FROM [dbo].[v_tieng_anh] AS [v_tieng_anh]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_tieu_thuyet" EntityType="Self.v_tieu_thuyet" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_tieu_thuyet].[id_san_pham] AS [id_san_pham], 
+    [v_tieu_thuyet].[ma_san_pham] AS [ma_san_pham], 
+    [v_tieu_thuyet].[ten_san_pham] AS [ten_san_pham], 
+    [v_tieu_thuyet].[ma_loai] AS [ma_loai], 
+    [v_tieu_thuyet].[mo_ta_chi_tiet] AS [mo_ta_chi_tiet], 
+    [v_tieu_thuyet].[don_gia] AS [don_gia], 
+    [v_tieu_thuyet].[dvt] AS [dvt], 
+    [v_tieu_thuyet].[tinh_trang] AS [tinh_trang], 
+    [v_tieu_thuyet].[hinh] AS [hinh], 
+    [v_tieu_thuyet].[san_pham_moi] AS [san_pham_moi], 
+    [v_tieu_thuyet].[tac_gia] AS [tac_gia], 
+    [v_tieu_thuyet].[nxb] AS [nxb], 
+    [v_tieu_thuyet].[ngay_xuat_ban] AS [ngay_xuat_ban], 
+    [v_tieu_thuyet].[so_trang] AS [so_trang], 
+    [v_tieu_thuyet].[danh_muc] AS [danh_muc]
+    FROM [dbo].[v_tieu_thuyet] AS [v_tieu_thuyet]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

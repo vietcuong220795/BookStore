@@ -1,0 +1,41 @@
+﻿@*@model BookStore.Models.san_pham*@
+@model PagedList.IPagedList<BookStore.Models.v_tieng_anh>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "tieng_anh";
+    Layout = "~/Views/Shared/Mytemplate.cshtml";
+}
+
+
+
+<div id="duongdan" style="width:100%;height:50px;float:left;background-color:#68A4C4">
+    <div style="margin-left:15%;margin-top:8px"><img id="Image13" src="~/images/home.png" /></div>
+</div>
+
+<div id="hang1" style="float:left;width:100%;margin-left:2%;margin-right:2%">
+
+
+    @foreach (var item in Model)
+    {
+      
+        {
+            <div id="sp1" style="margin-right:2%;margin-bottom:2%;float:left">
+                <img src="@Url.Content("~/images/")/@Html.DisplayFor(modelItem => item.hinh)" />
+                <p>Đơn giá: @Html.DisplayFor(modelItem => item.don_gia)</p>
+                <div>
+                    Số lượng:<input type="text" id="txtSL"> @*<asp:TextBox ID="TextBox1" runat="server" Width="44px"></asp:TextBox>*@
+                    <button name="btndathang" onclick="">
+                        <img src="@Url.Content("~/images/bag.png")" />
+                    </button> @*<asp:ImageButton ID="btndathang" runat="server" ImageUrl="~/images/bag.png" />*@
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<div style="float:right;margin-right:5px">
+    <span>
+        @Html.PagedListPager(Model, page => Url.Action("tieng_anh",
+    new { page }))
+    </span>
+</div>

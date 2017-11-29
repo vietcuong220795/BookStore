@@ -1,0 +1,123 @@
+﻿@model BookStore.Models.san_pham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/MytemplateAD.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>san_pham</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ma_san_pham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ma_san_pham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ten_san_pham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ten_san_pham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ma_loai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ma_loai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mo_ta_chi_tiet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mo_ta_chi_tiet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.don_gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.don_gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dvt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dvt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tinh_trang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tinh_trang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.san_pham_moi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.san_pham_moi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tac_gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tac_gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nxb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nxb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngay_xuat_ban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngay_xuat_ban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.so_trang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.so_trang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_san_pham }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
